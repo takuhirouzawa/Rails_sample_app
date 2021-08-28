@@ -99,8 +99,8 @@ footer ul li {
     margin-left: 15px;
 }
 
+/* mixins, variables, etc. */
 $gray-medium-light: #eaeaea;
-
 @mixin box_sizing {
     -moz-box-sizing:    border-box;
     -webkit-box-sizing: border-box;
@@ -108,7 +108,6 @@ $gray-medium-light: #eaeaea;
 }
 
 /* miscellaneous */
-
 .debug_dump {
     clear: both;
     float: left;
@@ -118,14 +117,12 @@ $gray-medium-light: #eaeaea;
 }
 
 /* forms */
-
 input, textarea, select, .uneditable-input {
     border: 1px solid #bbb;
     width: 100%;
     margin-bottom: 15px;
     @include box_sizing;
 }
-
 input {
     height: auto !important;
 }

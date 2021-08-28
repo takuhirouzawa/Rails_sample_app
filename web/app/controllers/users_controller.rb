@@ -8,11 +8,11 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params) #strong Parameters(コントローラー層で必須のパラメータと許可されたパラメータが指定でき，マスアサインメントの脆弱性から守れる)
+    @user = User.new(user_params)
     if @user.save
-      flash[:success] = "welcome to the Sample App!" #User登録が成功した場合にフラッシュメッセージを表示する
-      # 保存の成功をここで扱う。
-
+        # 保存の成功をここで扱う。
+      flash[:success] = "Welcome to the Sample App!"
+      redirect_to @user
     else
       render 'new'
     end
@@ -20,7 +20,7 @@ class UsersController < ApplicationController
 
 private
 
-  def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
-  end
+    def user_params
+      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    end
 end
